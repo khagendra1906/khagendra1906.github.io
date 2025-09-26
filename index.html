@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khagendra Joshi - Deputy Technical Officer & PhD Scholar</title>
+    <title>Khagendra Joshi - Research Engineer & PhD Scholar</title>
     <style>
         * {
             margin: 0;
@@ -40,6 +40,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
+            flex-wrap: wrap;
         }
 
         .logo {
@@ -52,15 +53,17 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         nav a {
-            color: white;
+            color: black;
             text-decoration: none;
             transition: all 0.3s ease;
             padding: 0.5rem 1rem;
             border-radius: 25px;
+            font-size: 0.9rem;
         }
 
         nav a:hover {
@@ -126,6 +129,21 @@
             font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-info span {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
         }
 
         .cta-button {
@@ -245,6 +263,50 @@
             border-left: 4px solid #667eea;
         }
 
+        .work-experience {
+            margin-bottom: 3rem;
+        }
+
+        .experience-item {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .experience-item h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .responsibilities {
+            margin-top: 1rem;
+        }
+
+        .responsibilities ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .responsibilities li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .responsibilities li::before {
+            content: '▶';
+            color: #667eea;
+            position: absolute;
+            left: 0;
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -314,24 +376,91 @@
             font-size: 1.2rem;
         }
 
-        .publications-list {
+        .project-type {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .research-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .research-area {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .research-area:hover {
+            transform: translateY(-5px);
+        }
+
+        .publications-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .publications-list, .patents-list {
             max-height: 600px;
             overflow-y: auto;
             padding-right: 1rem;
         }
 
-        .publication-item {
+        .publication-item, .patent-item {
             background: #f8f9fa;
             padding: 1.5rem;
             margin-bottom: 1rem;
             border-radius: 10px;
             border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover, .patent-item:hover {
+            transform: translateX(5px);
+            background: #e3f2fd;
+        }
+
+        .publication-item h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .publication-meta {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .event-item {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
             transition: transform 0.3s ease;
         }
 
-        .publication-item:hover {
-            transform: translateX(5px);
-            background: #e3f2fd;
+        .event-item:hover {
+            transform: translateY(-5px);
         }
 
         .contact-grid {
@@ -401,8 +530,13 @@
                 text-align: center;
             }
             
-            nav ul {
+            nav {
                 flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                justify-content: center;
                 gap: 1rem;
             }
             
@@ -411,6 +545,35 @@
                 height: 200px;
                 font-size: 3rem;
             }
+            
+            .publications-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        .objective-section {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .objective-section h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .objective-section p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
         }
     </style>
 </head>
@@ -421,9 +584,12 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#research">Research</a></li>
                 <li><a href="#publications">Publications</a></li>
+                <li><a href="#events">Events</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -433,6 +599,11 @@
         <div class="hero-content">
             <h1>Khagendra Joshi</h1>
             <p>Deputy Technical Officer & PhD Scholar specializing in Wireless Communications, Reconfigurable Intelligent Surfaces, and Visible Light Communication</p>
+            <div class="contact-info">
+                <span>📧 khagendra@iiitd.ac.in</span>
+                <span>📧 kjnielit@gmail.com</span>
+                <span>📱 +91 7428377739</span>
+            </div>
             <a href="#about" class="cta-button">Explore My Work</a>
         </div>
     </section>
@@ -440,11 +611,14 @@
     <div class="container">
         <section id="about" class="section">
             <h2 class="section-title">About Me</h2>
+            <div class="objective-section">
+                <h3>Professional Objective</h3>
+                <p>I aim to work with a forward-thinking organization that offers a dynamic environment where I can leverage my professional skills, enhance my abilities, and contribute to the organization's success while achieving my own career goals.</p>
+            </div>
             <div class="about-grid">
-                <div class="about-image">
-                    <div class="profile-circle">KJ</div>
-                </div>
-                <div class="about-content">
+               <div class="about-image">
+    <img src="image.jpg" alt="Profile picture of Khagendra Joshi" class="profile-photo">
+</div>                <div class="about-content">
                     <h3>Deputy Technical Officer at IIIT-Delhi</h3>
                     <p>I am a passionate researcher and engineer with over 8 years of experience in wireless communications and emerging technologies. Currently pursuing my PhD at IIIT-Delhi while serving as Deputy Technical Officer in the ECE Department.</p>
                     <p>My research focuses on cutting-edge technologies including Reconfigurable Intelligent Surfaces, Visible Light Communication, and Device-to-Device Communication. I have published numerous papers in top-tier conferences and journals, and hold several patents in my research areas.</p>
@@ -454,37 +628,117 @@
         </section>
 
         <section id="education" class="section">
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title">Educational Qualification</h2>
             <div class="education-timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Ph.D in Electronics & Communication</h3>
                         <h4>Indraprastha Institute of Information Technology, Delhi</h4>
-                        <p>Currently Pursuing • Focus: Wireless Communications, RIS, VLC</p>
+                        <p><strong>Status:</strong> Pursuing • <strong>Focus:</strong> Wireless Communications, RIS, VLC</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>M.Tech in Electronics Design & Technology</h3>
+                        <h3>M.Tech (Electronics Design & Technology)</h3>
                         <h4>National Institute of Electronics and Information Technology (NIELIT), Aurangabad</h4>
-                        <p>2015 • Specialization in advanced electronics and communication systems</p>
+                        <p><strong>Year:</strong> 2015 • Specialization in advanced electronics and communication systems</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>B.E in Electronics & Telecommunication</h3>
+                        <h3>B.E (Electronics & Telecommunication)</h3>
                         <h4>VPCOE, Baramati (Pune) - Savitribai Phule Pune University</h4>
-                        <p>2012 • Foundation in electronics and telecommunication engineering</p>
+                        <p><strong>Year:</strong> 2012 • Foundation in electronics and telecommunication engineering</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>12th Standard (PCM)</h3>
+                        <h4>Army School Sriganganagar, Rajasthan (CBSE)</h4>
+                        <p><strong>Year:</strong> 2007</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>10th Standard</h3>
+                        <h4>Army School Pathankot, Punjab (CBSE)</h4>
+                        <p><strong>Year:</strong> 2005</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section id="experience" class="section">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="work-experience">
+                <div class="experience-item">
+                    <h3>Deputy Technical Officer, ECE Department</h3>
+                    <h4>Indraprastha Institute of Information Technology (IIIT-D), New Delhi</h4>
+                    <p><strong>Duration:</strong> August 2024 - Present</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Research Engineer (A.M), ECE Department</h3>
+                    <h4>Indraprastha Institute of Information Technology (IIIT-D), New Delhi</h4>
+                    <p><strong>Duration:</strong> August 2021 - August 2024</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Research Engineer (J.M), ECE Department</h3>
+                    <h4>Indraprastha Institute of Information Technology (IIIT-D), New Delhi</h4>
+                    <p><strong>Duration:</strong> August 2016 - August 2021</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Lab Engineer, ECE Department</h3>
+                    <h4>Indraprastha Institute of Information Technology (IIIT-D), New Delhi</h4>
+                    <p><strong>Duration:</strong> January 2016 - August 2016</p>
+                </div>
+            </div>
+            <div class="responsibilities">
+                <h3>Key Responsibilities:</h3>
+                <ul>
+                    <li>Participates with faculty members and students, carrying out research work</li>
+                    <li>Assists faculty and Ph.D scholars in performing their research experiments and helps undergraduate students in their course and final-year projects</li>
+                    <li>Maintains an "open-door policy" and contributes to the formulation and modification in the laboratories</li>
+                    <li>Procurement of consumables as well as non-consumables for the lab</li>
+                    <li>Maintains lab website and online resources link</li>
+                    <li>Conducts training/workshop sessions on available high-end resources for students</li>
+                    <li>Handles high-end equipment/machines</li>
+                    <li>Liaises with faculty members to order required components for experiments</li>
+                    <li>Prepares managerial and technical documents related to labs</li>
+                    <li>Supervises interns and research associates</li>
+                    <li>Assists the department in new lab setup</li>
+                    <li>Provides mentorship to students in their course and research projects</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="research" class="section">
+            <h2 class="section-title">Research Areas Exploring</h2>
+            <div class="research-areas">
+                <div class="research-area">
+                    <h3>🔧 Reconfigurable Intelligent Surfaces</h3>
+                    <p>Design and Implementation</p>
+                </div>
+                <div class="research-area">
+                    <h3>💡 Optical Intelligent Reflective Surfaces</h3>
+                    <p>Design and Implementation</p>
+                </div>
+                <div class="research-area">
+                    <h3>🌟 Visible Light Communication</h3>
+                    <p>Design and Implementation</p>
+                </div>
+                <div class="research-area">
+                    <h3>📱 Device-to-Device Communication</h3>
+                    <p>Design and Implementation</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
         <section id="skills" class="section">
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Software</h3>
+                    <h3>Software Known</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">CST Studio</span>
                         <span class="skill-tag">LABVIEW</span>
@@ -494,211 +748,103 @@
                         <span class="skill-tag">TinkerCAD</span>
                         <span class="skill-tag">Multisim</span>
                         <span class="skill-tag">Eagle</span>
-                        <span class="skill-tag">Siemens PLC</span>
+                        <span class="skill-tag">Siemens Simatic Manager</span>
+                        <span class="skill-tag">WinCC (PLC & SCADA)</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Hardware</h3>
+                    <h3>Hardware Known</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">NI-USRP</span>
-                        <span class="skill-tag">Ettus USRPs</span>
+                        <span class="skill-tag">NI-USRP 2921, 2922</span>
+                        <span class="skill-tag">NI USRP Rios</span>
+                        <span class="skill-tag">NI My RIO</span>
+                        <span class="skill-tag">NI DAQ</span>
                         <span class="skill-tag">Zedboards</span>
+                        <span class="skill-tag">Basys3 boards</span>
+                        <span class="skill-tag">Zybo boards</span>
                         <span class="skill-tag">Raspberry Pi</span>
                         <span class="skill-tag">Arduino</span>
-                        <span class="skill-tag">FPGA Boards</span>
-                        <span class="skill-tag">RF Equipment</span>
+                        <span class="skill-tag">Ettus USRPs</span>
+                        <span class="skill-tag">Daughterboards</span>
+                        <span class="skill-tag">Ettus E310</span>
                         <span class="skill-tag">DSO</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Research Areas</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Reconfigurable Intelligent Surfaces</span>
-                        <span class="skill-tag">Visible Light Communication</span>
-                        <span class="skill-tag">Device-to-Device Communication</span>
-                        <span class="skill-tag">Optical Communication</span>
-                        <span class="skill-tag">5G/6G Technologies</span>
+                        <span class="skill-tag">Arbitrary Function Generator</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="section">
-            <h2 class="section-title">Key Projects</h2>
+            <h2 class="section-title">Projects Undertaken</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>Circular Optical Reconfigurable Intelligent Surface</h3>
-                    <p>Design and fabrication of novel circular optical RIS for advanced wireless communication systems. Patent filed for this innovative design.</p>
+                    <div class="project-type">B.E Project</div>
+                    <h3>Study and Design of Sierpinski Carpet Fractal Antenna</h3>
+                    <p>Comprehensive study and design implementation of fractal antenna technology for improved wireless communication performance.</p>
                 </div>
+                
                 <div class="project-card">
-                    <h3>VLC-based V2X Communications</h3>
-                    <p>Experimental validation of Vehicle-to-Everything communication using Visible Light Communication under various environmental conditions.</p>
+                    <div class="project-type">M.Tech Project</div>
+                    <h3>Design of a voice-controlled smart wheelchair for physically challenged persons</h3>
+                    <p>Innovative assistive technology solution incorporating voice recognition and smart navigation for enhanced mobility and independence.</p>
                 </div>
+                
                 <div class="project-card">
-                    <h3>Solar Panel Communication System</h3>
-                    <p>Implementation of solar panel-based communication using various modulation schemes for sustainable light communication.</p>
+                    <div class="project-type">PhD Research</div>
+                    <h3>An Empirical Study Validation of Solar Energy Harvesting Mathematical Model</h3>
+                    <p>Mathematical modeling and experimental validation for Poly and Mono Crystalline Solar Panel energy harvesting systems.</p>
                 </div>
+                
                 <div class="project-card">
-                    <h3>Smart Voice-Controlled Wheelchair</h3>
-                    <p>Design and development of an intelligent wheelchair system for physically challenged individuals with voice control capabilities.</p>
+                    <div class="project-type">PhD Research</div>
+                    <h3>Experimental observations on the feasibility of VLC-based V2X communications</h3>
+                    <p>Comprehensive study on Vehicle-to-Everything communications using Visible Light Communication under various environmental deterrents.</p>
                 </div>
+                
                 <div class="project-card">
-                    <h3>IRS-Assisted OFDM System</h3>
-                    <p>Performance analysis of Intelligent Reflecting Surface assisted OFDM systems with hardware impairments and phase noise.</p>
+                    <div class="project-type">PhD Research</div>
+                    <h3>Usage of P2P Li-Fi Transceivers for Establishing Backhaul Connectivity</h3>
+                    <p>Implementation and analysis of Peer-to-Peer Light Fidelity transceivers for robust backhaul communication networks.</p>
                 </div>
+                
                 <div class="project-card">
-                    <h3>GUI-based Digital IC Tester</h3>
-                    <p>Development of a user-friendly graphical interface for testing digital integrated circuits with automated testing capabilities.</p>
+                    <div class="project-type">PhD Research</div>
+                    <h3>A smart user-centric visible light communication system</h3>
+                    <p>Development of intelligent VLC systems with adaptive user-centric features for enhanced communication experience.</p>
                 </div>
-            </div>
-        </section>
-
-        <section id="publications" class="section">
-            <h2 class="section-title">Publications & Patents</h2>
-            <div class="publications-list">
-                <div class="publication-item">
-                    <h4>Performance Characterization of an IRS-assisted OFDM System with HPA Memory Effects and IRS Phase Noise</h4>
-                    <p>IEEE ANTS 2024 • Co-authors: Sana Naqvi, Vivek A Bohara, Ishaan Sharma</p>
+                
+                <div class="project-card">
+                    <div class="project-type">PhD Research</div>
+                    <h3>On the Performance of an IRS‐Assisted OFDM System with Non‐Ideal Oscillator and Amplifier</h3>
+                    <p>Performance analysis of Intelligent Reflecting Surface assisted OFDM systems considering hardware impairments and real-world constraints.</p>
                 </div>
-                <div class="publication-item">
-                    <h4>Experimental Validation of Solar Panel Communication with Various Phase Shift Keying Modulation Schemes</h4>
-                    <p>IEEE ANTS 2024 • Co-authors: Rahul, Vivek A Bohara, Abhijit Mitra, Anand Srivastava, Deepak Solanki</p>
+                
+                <div class="project-card">
+                    <div class="project-type">PhD Research</div>
+                    <h3>Design and Implementation of LTE Advanced Underlay Device to Device Communication Framework</h3>
+                    <p>Comprehensive framework development for D2D communication in LTE Advanced networks with underlay spectrum sharing.</p>
                 </div>
-                <div class="publication-item">
-                    <h4>Enhancing Wireless Connectivity in Skip Zones via Energy-Efficient Reconfigurable Intelligent Surface</h4>
-                    <p>ACM COMPASS 2024 • Co-authors: Deepak Kumar Sahoo, Debidas Kundu, Vivek Ashok Bohara, Amalendu Patnaik</p>
+                
+                <div class="project-card">
+                    <div class="project-type">PhD Research</div>
+                    <h3>Enhancing Wireless Connectivity in Skip Zones via Energy-Efficient Reconfigurable Intelligent Surface</h3>
+                    <p>Novel approach to improve wireless coverage in challenging environments using energy-efficient RIS technology.</p>
                 </div>
-                <div class="publication-item">
-                    <h4>Usage of P2P Li-Fi Transceivers for Establishing Backhaul Connectivity</h4>
-                    <p>IEEE COMSNETS 2024 • Co-authors: S. Paramita, A. Bhattacharya, A. Srivastava, V. A. Bohara, D. Solanki</p>
+                
+                <div class="project-card">
+                    <div class="project-type">PhD Research</div>
+                    <h3>Experimental Validation of Solar Panel Communication with Various Phase Shift Keying Modulation Schemes</h3>
+                    <p>Innovative use of solar panels as communication medium with comprehensive testing of different PSK modulation schemes for light communication.</p>
                 </div>
-                <div class="publication-item">
-                    <h4>Patents Filed</h4>
-                    <p>• Circular Optical RIS (Patent Filed)<br>
-                    • GUI-based IC Tester (Patent Filed)<br>
-                    • Reconfigurable Intelligent Surface (Patent Filed)</p>
+                
+                <div class="project-card">
+                    <div class="project-type">PhD Research</div>
+                    <h3>Circular Optical Reconfigurable Intelligent Surface Design and Fabrication</h3>
+                    <p>Novel circular optical RIS design and fabrication for advanced wireless communication systems. Patent filed for this innovative design.</p>
                 </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <h3>📧 Email</h3>
-                    <p>khagendra@iiitd.ac.in</p>
-                    <p>kjnielit@gmail.com</p>
+                
+                <div class="project-card">
+                    <div class="project-type">PhD Research</div>
+                    <h3>Performance Characterization of an IRS-assisted OFDM System with HPA Memory Effects and IRS Phase Noise</h3>
+                    <p>Comprehensive performance analysis considering High Power Amplifier memory effects and IRS phase noise in realistic communication scenarios.</p>
                 </div>
-                <div class="contact-item">
-                    <h3>📱 Phone</h3>
-                    <p>01126907518</p>
-                </div>
-                <div class="contact-item">
-                    <h3>🏢 Institution</h3>
-                    <p>IIIT-Delhi</p>
-                    <p>ECE Department</p>
-                </div>
-                <div class="contact-item">
-                    <h3>🔬 Research</h3>
-                    <p>Wireless Communications</p>
-                    <p>RIS & VLC Systems</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Khagendra Joshi. All rights reserved. | Research Engineer & PhD Scholar at IIIT-Delhi</p>
-    </footer>
-
-    <div class="scroll-to-top" id="scrollToTop">↑</div>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            const scrollTop = window.pageYOffset;
-            
-            if (scrollTop > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-                header.querySelectorAll('a').forEach(link => {
-                    link.style.color = '#333';
-                });
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.1)';
-                header.style.boxShadow = 'none';
-                header.querySelectorAll('a').forEach(link => {
-                    link.style.color = 'white';
-                });
-            }
-        });
-
-        // Scroll to top button
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
-            }
-        });
-
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('.section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
-        });
-
-        // Add hover effects to project cards
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.borderColor = '#667eea';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.borderColor = '#e0e0e0';
-            });
-        });
-    </script>
-</body>
-</html>
