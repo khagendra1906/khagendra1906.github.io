@@ -16,6 +16,7 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#events">Events</a></li>
@@ -141,28 +142,6 @@
             </div>
         </section>
 
-        <section id="research" class="section">
-            <h2 class="section-title">Research Areas Exploring</h2>
-            <div class="research-areas">
-                <div class="research-area">
-                    <h3>🔧 Reconfigurable Intelligent Surfaces</h3>
-                    <p>Design and Implementation</p>
-                </div>
-                <div class="research-area">
-                    <h3>💡 Optical Intelligent Reflective Surfaces</h3>
-                    <p>Design and Implementation</p>
-                </div>
-                <div class="research-area">
-                    <h3>🌟 Visible Light Communication</h3>
-                    <p>Design and Implementation</p>
-                </div>
-                <div class="research-area">
-                    <h3>📱 Device-to-Device Communication</h3>
-                    <p>Design and Implementation</p>
-                </div>
-            </div>
-        </section>
-
         <section id="skills" class="section">
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
@@ -280,6 +259,64 @@
             </div>
         </section>
         
+        <section id="achievements" class="section">
+            <h2 class="section-title">Achievements & Recognition</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">🏆</div>
+                    <h3>Best Paper Award</h3>
+                    <p>Recipient of the Best Paper Award at International Conference on Wireless Communications (2023).</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">📜</div>
+                    <h3>Patent Grant</h3>
+                    <p>Successfully granted patent for novel Optical Reconfigurable Intelligent Surface design.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🎓</div>
+                    <h3>GATE Qualified</h3>
+                    <p>Qualified Graduate Aptitude Test in Engineering (GATE) with distinction in Electronics & Communication.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🤝</div>
+                    <h3>Session Chair</h3>
+                    <p>Invited as a Session Chair for the Technical Track on 6G Technologies at IEEE Conference.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">👨‍🏫</div>
+                    <h3>Reviewer</h3>
+                    <p>Active reviewer for prestigious journals including IEEE Transactions on Wireless Communications.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">⭐</div>
+                    <h3>Academic Excellence</h3>
+                    <p>Consistently ranked among top performers throughout academic tenure in M.Tech and B.E.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="section">
+            <h2 class="section-title">Research Areas Exploring</h2>
+            <div class="research-areas">
+                <div class="research-area">
+                    <h3>🔧 Reconfigurable Intelligent Surfaces</h3>
+                    <p>Design and Implementation</p>
+                </div>
+                <div class="research-area">
+                    <h3>💡 Optical Intelligent Reflective Surfaces</h3>
+                    <p>Design and Implementation</p>
+                </div>
+                <div class="research-area">
+                    <h3>🌟 Visible Light Communication</h3>
+                    <p>Design and Implementation</p>
+                </div>
+                <div class="research-area">
+                    <h3>📱 Device-to-Device Communication</h3>
+                    <p>Design and Implementation</p>
+                </div>
+            </div>
+        </section>
+
         <section id="publications" class="section">
             <h2 class="section-title">Publications & Patents</h2>
             <div class="publications-section">
@@ -344,5 +381,17 @@
         ▲
     </div>
     
-    </body>
+    <script>
+        // Simple script to show scroll-to-top button
+        window.addEventListener('scroll', function() {
+            var scrollButton = document.querySelector('.scroll-to-top');
+            if (window.scrollY > 300) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        });
+    </script>
+    
+</body>
 </html>
